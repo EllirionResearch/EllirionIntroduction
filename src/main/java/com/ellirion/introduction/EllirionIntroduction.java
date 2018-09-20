@@ -35,6 +35,7 @@ public class EllirionIntroduction extends JavaPlugin {
     }
 
     private void registerCommands(){
+        // name of the command defined in the plugin.yml as string and the class it needs to call.
         getCommand("helloWorld").setExecutor(new HelloWorld());
     }
 }
