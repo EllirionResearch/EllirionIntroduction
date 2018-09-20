@@ -32,11 +32,15 @@ public class EllirionIntroduction extends JavaPlugin {
     @Override
     public void onEnable() {
         getLogger().info("Introduction is enabled.");
-
-        getServer().getPluginManager().registerEvents(new StickListener(), this);
+        registerCommands();
+        registerEvents();
     }
 
     private void registerCommands(){
         getCommand("helloWorld").setExecutor(new HelloWorld());
+    }
+
+    private void registerEvents(){
+        getServer().getPluginManager().registerEvents(new StickListener(), this);
     }
 }

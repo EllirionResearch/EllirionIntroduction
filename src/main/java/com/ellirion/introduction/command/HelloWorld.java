@@ -17,7 +17,7 @@ public class HelloWorld implements CommandExecutor {
         // set the server to broadcast to.
         Server server = commandSender.getServer();
 
-        // if it isn't aplayer then the server is broadcasting.
+        // if it isn't a player then the server is broadcasting.
         // else get the player name.
         if (!(commandSender instanceof Player)){
             playerName = "server";
