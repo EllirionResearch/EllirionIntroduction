@@ -1,15 +1,18 @@
 package com.ellirion.introduction.command;
 
+import org.bukkit.EntityEffect;
 import org.bukkit.Server;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.potion.PotionEffect;
 
 public class HelloWorld implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         String playerName;
+        Player player = null;
 
         // set the server to broadcast to.
         Server server = commandSender.getServer();
@@ -19,7 +22,7 @@ public class HelloWorld implements CommandExecutor {
         if (!(commandSender instanceof Player)){
             playerName = "server";
         }else{
-            Player player = (Player) commandSender;
+            player = (Player) commandSender;
 
 
             playerName = player.getDisplayName();
