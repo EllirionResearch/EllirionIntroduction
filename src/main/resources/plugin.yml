@@ -6,4 +6,4 @@ commands:
   helloWorld:
     description: shouts hello world across the server along with given text.
     usage: /hw, /helloworld
-    aliases: [helloworld]
+    aliases: [hw]
