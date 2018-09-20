@@ -2,6 +2,7 @@ package com.ellirion.introduction;
 
 import com.ellirion.introduction.command.HelloWorld;
 import org.bukkit.plugin.java.JavaPlugin;
+import com.ellirion.introduction.Listener.StickListener;
 
 public class EllirionIntroduction extends JavaPlugin {
 
@@ -31,7 +32,8 @@ public class EllirionIntroduction extends JavaPlugin {
     @Override
     public void onEnable() {
         getLogger().info("Introduction is enabled.");
-        registerCommands();
+
+        getServer().getPluginManager().registerEvents(new StickListener(), this);
     }
 
     private void registerCommands(){
