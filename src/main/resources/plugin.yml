@@ -1,0 +1,9 @@
+name: EllirionIntroduction
+main: com.ellirion.introduction.EllirionIntroduction
+version: 0.0.1
+description: introduction
+commands:
+  helloWorld:
+    description: shouts hello world across the server along with given text.
+    usage: /hw, /helloworld
+    aliases: [helloworld]

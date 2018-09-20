@@ -1,5 +1,6 @@
 package com.ellirion.introduction;
 
+import com.ellirion.introduction.command.HelloWorld;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class EllirionIntroduction extends JavaPlugin {
@@ -30,5 +31,10 @@ public class EllirionIntroduction extends JavaPlugin {
     @Override
     public void onEnable() {
         getLogger().info("Introduction is enabled.");
+        registerCommands();
+    }
+
+    private void registerCommands(){
+        getCommand("helloWorld").setExecutor(new HelloWorld());
     }
 }
