@@ -18,10 +18,17 @@ public class StickListener implements Listener {
         if(!(mainHandItem.getType() == Material.STICK)){
             return;
         }
+        event.setCancelled(true);
 
-        Location lookingLocation = player.getTargetBlock(null, 35565).getLocation();
+        float pitch = player.getLocation().getPitch();
+        float yaw = player.getLocation().getYaw();
 
-        player.teleport(lookingLocation);
+        if(player.getTargetBlock(null,35565).getType() != Material.AIR) {
+            Location targetLocation = player.getTargetBlock(null, 35565).getLocation();
+            Location newLocation = new Location(targetLocation.getWorld(), targetLocation.getBlockX(),
+                                                targetLocation.getBlockY() + 1 , targetLocation.getBlockZ(), yaw, pitch);
+            player.teleport(newLocation);
+        }
 
         return;
     }
