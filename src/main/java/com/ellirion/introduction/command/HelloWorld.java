@@ -12,6 +12,7 @@ public class HelloWorld implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         String playerName;
+        String message;
         Player player = null;
 
         // set the server to broadcast to.
@@ -21,14 +22,17 @@ public class HelloWorld implements CommandExecutor {
         // else get the player name.
         if (!(commandSender instanceof Player)){
             playerName = "server";
+
+            message = playerName + " says hello world.";
         }else{
             player = (Player) commandSender;
 
 
             playerName = player.getDisplayName();
+
+            message = "player " + playerName + " says hello world.";
         }
 
-        String message = "player " + playerName + " says hello world.";
         // check if the commandsender send any more strings with the command.
         if(strings.length!=0){
             message += " " + playerName + " also says the following: ";

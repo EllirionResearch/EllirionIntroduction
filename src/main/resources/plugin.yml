@@ -7,3 +7,15 @@ commands:
     description: shouts hello world across the server along with given text.
     usage: /hw, /helloworld
     aliases: [hw]
+  joinred:
+    description: joins team red
+    usage: /joinred
+  joinblue:
+    description: joins team blue
+    usage: /joinblue
+  leavered:
+    description: leaves team red
+    usage: /leavered
+  leaveblue:
+    description: leaves team blue
+    usage: /leaveblue
