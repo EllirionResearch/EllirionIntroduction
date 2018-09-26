@@ -9,27 +9,28 @@ import java.util.Set;
 
 public class RaceManager {
 
-    private HashMap<String, Race> races;
-    private Set<ChatColor> usedColors;
+    private static HashMap<String, Race> races = new HashMap<>();;
+    private static Set<ChatColor> usedColors = new HashSet<>();
 
     public RaceManager(String DefaultRace){
-        races = new HashMap<>();
+
         Race r = new Race(DefaultRace, ChatColor.DARK_GRAY);
         races.put(r.getRaceName(), r);
-        usedColors = new HashSet<>();
+
         usedColors.add(ChatColor.DARK_GRAY);
     }
 
-    public boolean addRace(String name, ChatColor color){
+    public static boolean addRace(String name, ChatColor color){
         if(usedColors.contains(color) || raceExists(name)){
             return false;
         }
         Race r = new Race(name, color);
+        races.putIfAbsent(name, r);
         usedColors.add(color);
         return true;
     }
 
-    public boolean ChangeRaceName(String name, String newName){
+    public static boolean ChangeRaceName(String name, String newName){
         if(raceExists(newName)){
             return false;
         }
@@ -39,11 +40,11 @@ public class RaceManager {
         return true;
     }
 
-    public Set<String> getRaceNames(){
+    public static Set<String> getRaceNames(){
         return races.keySet();
     }
 
-    public boolean addPlayerToRace(Player p, String raceName){
+    public static boolean addPlayerToRace(Player p, String raceName){
         if(!raceExists(raceName) || hasRace(p)){
             return false;
         }
@@ -54,7 +55,7 @@ public class RaceManager {
         return true;
     }
 
-    public boolean hasRace(Player p){
+    public static boolean hasRace(Player p){
         for(Race r : races.values()) {
             if (r.hasPlayer(p.getName())) {
                 return true;
@@ -63,7 +64,20 @@ public class RaceManager {
         return false;
     }
 
-    public boolean raceExists(String raceName){
+    public static boolean raceExists(String raceName){
         return  races.containsKey(raceName);
+    }
+
+    public static Race getPlayerRace(Player p){
+        for(Race r : races.values()){
+            if(r.hasPlayer(p.getName())){
+                return r;
+            }
+        }
+        return null;
+    }
+
+    public static boolean isColerInUse(ChatColor color){
+        return usedColors.contains(color);
     }
 }

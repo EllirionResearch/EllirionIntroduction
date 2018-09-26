@@ -1,8 +1,7 @@
 package com.ellirion.introduction;
 
 import com.ellirion.introduction.command.HelloWorld;
-import com.ellirion.introduction.groundWars.FriendlyFireListener;
-import com.ellirion.introduction.groundWars.Teamstest;
+import com.ellirion.introduction.groundWars.*;
 import org.bukkit.plugin.java.JavaPlugin;
 import com.ellirion.introduction.Listener.StickListener;
 
@@ -10,7 +9,8 @@ public class EllirionIntroduction extends JavaPlugin {
 
     private static EllirionIntroduction INSTANCE;
 
-    Teamstest teamsCommand = new Teamstest();
+    private Teamstest teamsCommand = new Teamstest();
+    private RaceManager raceManager = new RaceManager("Wildernis");
 
     /**
      * Constructor to set instance.
@@ -47,6 +47,8 @@ public class EllirionIntroduction extends JavaPlugin {
         getCommand("joinblue").setExecutor(teamsCommand);
         getCommand("leavered").setExecutor(teamsCommand);
         getCommand("leaveblue").setExecutor(teamsCommand);
+        getCommand("createRace").setExecutor(new CreateRaceCommand());
+        getCommand("joinRace").setExecutor(new joinRaceCommand());
     }
 
     private void registerEvents(){
