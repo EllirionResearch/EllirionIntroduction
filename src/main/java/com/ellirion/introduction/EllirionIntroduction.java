@@ -2,11 +2,7 @@ package com.ellirion.introduction;
 
 import com.ellirion.introduction.command.HelloWorld;
 import com.ellirion.introduction.groundWars.FriendlyFireListener;
-import com.ellirion.introduction.groundWars.Team;
 import com.ellirion.introduction.groundWars.Teamstest;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import com.ellirion.introduction.Listener.StickListener;
 
