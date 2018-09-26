@@ -24,6 +24,19 @@ public class Race {
         return players.remove(p);
     }
 
-    public boolean hasPlayer(String)
+    public boolean hasPlayer(String p){
+        return players.contains(p);
+    }
 
+    public String getRaceName() {
+        return raceName;
+    }
+
+    public ChatColor getTeamColor() {
+        return teamColor;
+    }
+
+    public void setRaceName(String name){
+        raceName = name;
+    }
 }
