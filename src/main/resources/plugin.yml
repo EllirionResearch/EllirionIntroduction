@@ -25,3 +25,11 @@ commands:
   createRace:
     description: allows the server to create a race. players are not allowed to do this.
     usage: createRace <race name> <color>
+  CreatePlots:
+    description: Create plots
+    usage: /cp <PLOT-SIZE> <MAP-RADIUS> <CENTER-X> <CENTER-Z>
+    aliasses: [cp]
+  GetPlot:
+    description: Get plot from location
+    usage: /gp
+    aliasses: [gp]
