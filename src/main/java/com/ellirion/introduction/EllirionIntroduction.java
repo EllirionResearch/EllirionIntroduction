@@ -57,7 +57,7 @@ public class EllirionIntroduction extends JavaPlugin {
 
     private void registerEvents(){
         getServer().getPluginManager().registerEvents(new StickListener(), this);
-        //getServer().getPluginManager().registerEvents(new FriendlyFireListener(), this);
+        getServer().getPluginManager().registerEvents(new FriendlyFireListener(), this);
 
     }
 }
