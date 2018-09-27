@@ -1,9 +1,11 @@
 package com.ellirion.introduction;
 
+import com.ellirion.introduction.plotSystem.command.CreatePlotsCommand;
 import com.ellirion.introduction.command.HelloWorld;
 import com.ellirion.introduction.groundWars.*;
 import org.bukkit.plugin.java.JavaPlugin;
 import com.ellirion.introduction.Listener.StickListener;
+import com.ellirion.introduction.plotSystem.command.GetPlotCommand;
 
 public class EllirionIntroduction extends JavaPlugin {
 
@@ -49,11 +51,13 @@ public class EllirionIntroduction extends JavaPlugin {
 //        getCommand("leaveblue").setExecutor(teamsCommand);
         getCommand("createRace").setExecutor(new CreateRaceCommand());
         getCommand("joinRace").setExecutor(new joinRaceCommand());
+        getCommand("CreatePlots").setExecutor(new CreatePlotsCommand());
+        getCommand("GetPlot").setExecutor(new GetPlotCommand());
     }
 
     private void registerEvents(){
         getServer().getPluginManager().registerEvents(new StickListener(), this);
-        getServer().getPluginManager().registerEvents(new FriendlyFireListener(), this);
+        //getServer().getPluginManager().registerEvents(new FriendlyFireListener(), this);
 
     }
 }
