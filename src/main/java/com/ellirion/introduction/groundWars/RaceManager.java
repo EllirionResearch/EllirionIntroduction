@@ -50,14 +50,14 @@ public class RaceManager {
         }
 
         Race r = races.get(raceName);
-        r.addPlayer(p.getName());
+        r.addPlayer(p.getUniqueId());
         p.setDisplayName(r.getTeamColor() + "[" + raceName + "] " + ChatColor.RESET+ p.getName());
         return true;
     }
 
     public static boolean hasRace(Player p){
         for(Race r : races.values()) {
-            if (r.hasPlayer(p.getName())) {
+            if (r.hasPlayer(p.getUniqueId())) {
                 return true;
             }
         }
@@ -70,7 +70,7 @@ public class RaceManager {
 
     public static Race getPlayerRace(Player p){
         for(Race r : races.values()){
-            if(r.hasPlayer(p.getName())){
+            if(r.hasPlayer(p.getUniqueId())){
                 return r;
             }
         }

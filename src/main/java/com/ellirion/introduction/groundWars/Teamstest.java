@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Teamstest implements CommandExecutor {
-    private static test t = new test();
+    private test t = new test();
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command cmd, String label, String[] args) {

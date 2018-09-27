@@ -9,7 +9,7 @@ public class EllirionIntroduction extends JavaPlugin {
 
     private static EllirionIntroduction INSTANCE;
 
-    private Teamstest teamsCommand = new Teamstest();
+//    private Teamstest teamsCommand = new Teamstest();
     private RaceManager raceManager = new RaceManager("Wildernis");
 
     /**
@@ -43,10 +43,10 @@ public class EllirionIntroduction extends JavaPlugin {
     private void registerCommands(){
         // name of the command defined in the plugin.yml as string and the class it needs to call.
         getCommand("helloWorld").setExecutor(new HelloWorld());
-        getCommand("joinred").setExecutor(teamsCommand);
-        getCommand("joinblue").setExecutor(teamsCommand);
-        getCommand("leavered").setExecutor(teamsCommand);
-        getCommand("leaveblue").setExecutor(teamsCommand);
+//        getCommand("joinred").setExecutor(teamsCommand);
+//        getCommand("joinblue").setExecutor(teamsCommand);
+//        getCommand("leavered").setExecutor(teamsCommand);
+//        getCommand("leaveblue").setExecutor(teamsCommand);
         getCommand("createRace").setExecutor(new CreateRaceCommand());
         getCommand("joinRace").setExecutor(new joinRaceCommand());
     }

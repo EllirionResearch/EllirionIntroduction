@@ -2,11 +2,12 @@ package com.ellirion.introduction.groundWars;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.UUID;
 
 import org.bukkit.ChatColor;
 
 public class Race {
-    private Set<String> players;
+    private Set<UUID> players;
     private String raceName;
     private ChatColor teamColor;
 
@@ -16,15 +17,15 @@ public class Race {
         teamColor = color;
     }
 
-    public boolean addPlayer(String p){
+    public boolean addPlayer(UUID p){
         return players.add(p);
     }
 
-    public boolean removePlayer(String p){
+    public boolean removePlayer(UUID p){
         return players.remove(p);
     }
 
-    public boolean hasPlayer(String p){
+    public boolean hasPlayer(UUID p){
         return players.contains(p);
     }
 
